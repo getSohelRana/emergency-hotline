@@ -23,7 +23,7 @@ let copyCount = 0;
 const showCopyCount = document.getElementById('copy-count');
 
 // coins count
-let mainCoins = 100;
+let mainCoins =  Number( document.getElementById('main-coin').innerText);
 
 document.getElementById('card-items').addEventListener('click' , (e) => {
 
@@ -66,6 +66,10 @@ document.getElementById('card-items').addEventListener('click' , (e) => {
     // Clear Call History List
     document.getElementById('clear-call-history').addEventListener('click' , () => {
         document.getElementById('call-history-container').innerText = "";
+        
+        // After 20 coins are reduced, the current coin will be displayed.
+        const currentCoins = mainCoins;
+        document.getElementById('main-coin').innerText = currentCoins;
     })
 
     //button action for copy-btn
